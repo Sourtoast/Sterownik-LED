@@ -1,3 +1,9 @@
+---
+title: Sterowanie LED metodą PWM
+author: Wiktor Buliński
+date: 15 maja 2019
+---
+
 ## Sterowanie LED metodą PWM
 ### Zasada działania:
 PWM (ang. **P**ulse **W**idth **M**odulation) jest określeniem sygnału cyfrowego.
@@ -39,17 +45,48 @@ Regulacja odbywa sie przez podanie sygnału analogowego do mikrokontrolera któr
 <!-- TODO change code to real one -->
 
 ```C
+const int R = 9;
+const int G = 5;
+const int B = 6;
+//const int AR = A0;
+//int ARValue = 1;
+
 void setup() {
-  // initialize digital pin LED_BUILTIN as an output.
-  pinMode(LED_BUILTIN, OUTPUT);
+  pinMode(R, OUTPUT); //RED
+  pinMode(G, OUTPUT); //GREEN
+  pinMode(B, OUTPUT); //BLUE
+  setColourRgb(0,0,0);
 }
 
-// the loop function runs over and over again forever
 void loop() {
-  digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
-  delay(1000);                       // wait for a second
-  digitalWrite(LED_BUILTIN, LOW);    // turn the LED off by making the voltage LOW
-  delay(1000);                       // wait for a second
+//  ARValue = map(analogRead(AR), 0, 1023, 0, 255);
+  
+  unsigned int rgbColour[3];
+
+  // Start off with red.
+  rgbColour[0] = 255;
+  rgbColour[1] = 0;
+  rgbColour[2] = 0;  
+
+  // Choose the colours to increment and decrement.
+  for (int decColour = 0; decColour < 3; decColour += 1) {
+    int incColour = decColour == 2 ? 0 : decColour + 1;
+
+    // cross-fade the two colours.
+    for(int i = 0; i < 255; i += 1) {
+      rgbColour[decColour] -= 1;
+      rgbColour[incColour] += 1;
+      
+      setColourRgb(rgbColour[0], rgbColour[1], rgbColour[2]);
+      delay(10);
+    }
+  }
+}
+
+void setColourRgb(unsigned int red, unsigned int green, unsigned int blue) {
+  analogWrite(R, red);
+  analogWrite(G, green);
+  analogWrite(B, blue);
 }
 ```
 
