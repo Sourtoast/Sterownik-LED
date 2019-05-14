@@ -34,5 +34,27 @@ Regulacja odbywa sie przez podanie sygnału analogowego do mikrokontrolera któr
   - **Trój-pinowe wyprowadzenie na analogowy sygnał sterowania** - obudowa THT, raster 2.54mm (x3)
   - **Sześcio-pinowe Wyprowadzenie do programowania układu** - obudowa THT, raster 2.54mm
 
+#### Program wykonawczy
+
+<!-- TODO change code to real one -->
+
+```C
+void setup() {
+  // initialize digital pin LED_BUILTIN as an output.
+  pinMode(LED_BUILTIN, OUTPUT);
+}
+
+// the loop function runs over and over again forever
+void loop() {
+  digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
+  delay(1000);                       // wait for a second
+  digitalWrite(LED_BUILTIN, LOW);    // turn the LED off by making the voltage LOW
+  delay(1000);                       // wait for a second
+}
+```
+
 #### Schemat elektroniczny
 ![](./schematic.png "Schemat elektroniczny")
+
+#### Schemat PCB
+![](./PCB.png "Schemat PCB")
