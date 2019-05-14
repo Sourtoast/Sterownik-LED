@@ -1,9 +1,3 @@
----
-title: Sterowanie LED metodą PWM
-author: Wiktor Buliński
-date: 15 maja 2019
----
-
 ## Sterowanie LED metodą PWM
 ### Zasada działania:
 PWM (ang. **P**ulse **W**idth **M**odulation) jest określeniem sygnału cyfrowego.
