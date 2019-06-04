@@ -35,4 +35,4 @@ void setColor(int red, int green, int blue) {
   analogWrite(OutputR, red);
   analogWrite(OutputG, green);
   analogWrite(OutputB, blue);
- }
+}
