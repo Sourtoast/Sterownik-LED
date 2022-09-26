@@ -2,10 +2,10 @@
 ### Zasada działania:
 PWM (ang. **P**ulse **W**idth **M**odulation) jest określeniem sygnału cyfrowego.
 Najczęściej stosowany jest do sterowania szybkością serwo silnika, kontroli jasności oświetlenia czy w zasilaniu urządzeń. Sygnał ten podobny jest do sygnału
-prostąkątnego. Przy stałej częstotliwości i amplitudzie generowane są impulsy
-trwające pewną część okresu, nazywamy to wpółczynnikiem wypełnienia.  
+prostokątnego. Przy stałej częstotliwości i amplitudzie generowane są impulsy
+trwające pewną część okresu, nazywamy to współczynnikiem wypełnienia.  
 
-Kontrolując współczynnik wypełnienienia wpływamy na średnią wartość napięcia
+Kontrolując współczynnik wypełnienia wpływamy na średnią wartość napięcia
 tym samym zmieniając moc wyjściową. Wynika to ze wzrou P = U·I gdzie pod
 wartość napięcia podstawiamy jej średnią w okresie.
 
